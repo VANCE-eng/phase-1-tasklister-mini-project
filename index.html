@@ -21,8 +21,30 @@
       </ul>
     </div>
 
-    <script src="./src/index.js"></script>
-  </div>
+    <script>
+      const taskForm = document.getElementById("create-task-form");
 
+      function buildToDo(task) {
+        const li = document.createElement("li");
+
+        li.textContent = task;
+
+        const taskList = document.getElementById("tasks");
+
+        taskList.appendChild(li);
+      }
+
+      taskForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const task = event.target["new-task-description"].value;
+
+        buildToDo(task);
+
+        event.target["new-task-description"].value = "";
+      });
+    </script>
+
+  </div>
 </body>
 </html>
