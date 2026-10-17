@@ -21,29 +21,29 @@
       </ul>
     </div>
 
-    <script>
-      const taskForm = document.getElementById("create-task-form");
+      <script>
+  const taskForm = document.getElementById("create-task-form");
 
-      function buildToDo(task) {
-        const li = document.createElement("li");
+  function buildToDo(task) {
+    const li = document.createElement("li");
 
-        li.textContent = task;
+    li.textContent = task;
 
-        const taskList = document.getElementById("tasks");
+    const taskList = document.getElementById("tasks");
 
-        taskList.appendChild(li);
-      }
+    taskList.appendChild(li);
+  }
 
-      taskForm.addEventListener("submit", (event) => {
-        event.preventDefault();
+  taskForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-        const task = event.target["new-task-description"].value;
+    const task = event.target.elements["new-task-description"].value;
 
-        buildToDo(task);
+    buildToDo(task);
 
-        event.target["new-task-description"].value = "";
-      });
-    </script>
+    event.target.elements["new-task-description"].value = "";
+  });
+</script>
 
   </div>
 </body>
